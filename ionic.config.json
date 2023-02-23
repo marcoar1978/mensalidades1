@@ -1,0 +1,7 @@
+{
+  "name": "mensalidades1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
