@@ -1,0 +1,275 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{mensalista?.nomeCompleto}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="div-select-ano">
+    <select id="select-ano" [(ngModel)]="ano" style="padding: 5px">
+      <option>{{anoSelect - 1}}</option>
+      <option aria-checked="true">{{anoSelect}}</option>
+      <option>{{anoSelect + 1}}</option>
+    </select>
+
+    <ion-icon
+      name="reader"
+      class="icon"
+      size="large"
+      color="primary"
+      (click)="setIsModalOpen(true)"
+    ></ion-icon>
+  </div>
+
+  <ion-list>
+    <ion-item button>
+      <ion-grid (click)="showFormPgto('01', getPgtoMes('01'))">
+        <ion-row>
+          <ion-col>Janeiro</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("01") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row> </ion-grid
+      ><br />
+    </ion-item>
+    <div class="form-mes" id="form-mes-01">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('01')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'01'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button>
+      <ion-grid (click)="showFormPgto('02', getPgtoMes('02'))">
+        <ion-row>
+          <ion-col>Fevereiro</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("02") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-02">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('02')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'02'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('03', getPgtoMes('03'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Março</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("03") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-03">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('03')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'03'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('04', getPgtoMes('04'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Abril</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("04") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-04">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('04')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'04'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('05', getPgtoMes('05'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Maio</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("05") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-05">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('05')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'05'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('06', getPgtoMes('06'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Junho</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("06") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-06">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('06')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'06'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('07', getPgtoMes('07'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Julho</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("07") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-07">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('07')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'07'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('08', getPgtoMes('08'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Agosto</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("08") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-08">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('08')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'08'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('09', getPgtoMes('09'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Setembro</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("09") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-09">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('09')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'09'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('10', getPgtoMes('10'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Outubro</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("10") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-10">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('10')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'10'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('11', getPgtoMes('11'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Novembro</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("11") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-11">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('11')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'11'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+    <ion-item button (click)="showFormPgto('12', getPgtoMes('12'))">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Dezembro</ion-col>
+          <ion-col style="text-align: right"
+            >{{getPgtoMes("12") | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="form-mes" id="form-mes-12">
+      <app-form-pgto
+        [ano]="ano"
+        [valorPago]="getPgtoMes('12')"
+        [valorConfig]="valorConfig"
+        [pgtos]="mensalista.pgtos"
+        [mes]="'12'"
+        (pgtoEvent)="addPgto($event)"
+      ></app-form-pgto>
+    </div>
+  </ion-list>
+</ion-content>
+
+<app-modal-pgtos
+  [isModalOpen]="isModalPgtoOpen"
+  [mensalista]="mensalista"
+  (modalEvent)="setIsModalOpen(false)"
+  (isInativedPgtoChange)="saveMensalista($event)"
+  
+></app-modal-pgtos>
+

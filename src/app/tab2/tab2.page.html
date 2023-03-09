@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title> Pagamentos por Mês </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="div-select-mes-ano">
+    <select
+      id="select-mes"
+      name="select-mes"
+      class="selectDate"
+      [(ngModel)]="mes"
+    >
+      <option value="01" [selected]="setMesChecked('01')">Janeiro</option>
+      <option value="02" [selected]="setMesChecked('02')">Fevereiro</option>
+      <option value="03" [selected]="setMesChecked('03')">Março</option>
+      <option value="04" [selected]="setMesChecked('04')">Abril</option>
+      <option value="05" [selected]="setMesChecked('05')">Maio</option>
+      <option value="06" [selected]="setMesChecked('06')">Junho</option>
+      <option value="07" [selected]="setMesChecked('07')">Julho</option>
+      <option value="08" [selected]="setMesChecked('08')">Agosto</option>
+      <option value="09" [selected]="setMesChecked('09')">Setembro</option>
+      <option value="10" [selected]="setMesChecked('10')">Outubro</option>
+      <option value="11" [selected]="setMesChecked('11')">Novembro</option>
+      <option value="12" [selected]="setMesChecked('12')">Dezembro</option>
+    </select>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <select
+      id="select-ano"
+      name="select-ano"
+      class="selectDate"
+      [(ngModel)]="ano"
+    >
+      <option>{{anoSelect - 1}}</option>
+      <option aria-checked="true">{{anoSelect}}</option>
+      <option>{{anoSelect + 1}}</option>
+    </select>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let mensalista of mensalistas">
+      <ion-grid>
+        <ion-row>
+          <ion-col>{{mensalista.nomeSimp}}</ion-col>
+          <ion-col style="text-align: right"
+            >{{getValorMes(mensalista) | number : '1.2-2'}}</ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
 </ion-content>

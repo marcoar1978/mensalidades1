@@ -1,0 +1,18 @@
+.div-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button-delete {
+    text-align: center;
+}
+
+.button-delete:hover {
+    background-color: #f5f5f5;
+}

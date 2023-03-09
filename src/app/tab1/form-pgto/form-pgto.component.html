@@ -1,0 +1,85 @@
+<div class="principal">
+  <form [formGroup]="form" (submit)="submitForm()">
+    <table>
+      <tr class="linha">
+        <td style="width: 50px">Data</td>
+        <td>
+          <input
+            type="date"
+            formControlName="dataPgto"
+            [(ngModel)]="pgto.dataPgto"
+            name="dataPgto"
+            style="padding: 5px; margin-bottom: 3px"
+          />
+          <div
+            *ngIf="form.get('dataPgto')?.errors?.['required'] && submit"
+            style="color: red; margin-top: 5px"
+          >
+            A data deve ser selecionada
+          </div>
+        </td>
+      </tr>
+      <tr class="linha">
+        <td style="width: 50px">Valor</td>
+        <td>
+          <input
+            type="number"
+            formControlName="valor"
+            style="width: 100px; padding: 5px"
+            [(ngModel)]="pgto.valor"
+            name="valor"
+          />
+          <div
+            *ngIf="form.get('valor')?.errors?.['required'] && submit"
+            style="color: red; margin-top: 3px"
+            
+          >
+            O campo valor é obrigatório
+          </div>
+          <div
+            *ngIf="form.get('valor')?.errors?.['max'] && submit"
+            style="color: red; margin-top:3px"
+          >
+            O valor máximo é de R$
+            {{ this.valorConfig.valorMensalidade - this.valorPago }},00
+          </div>
+          <div
+            *ngIf="form.get('valor')?.errors?.['min'] && submit"
+            style="color: red; margin-top: 3px"
+          >
+            O valor mínimo é de R$ 10,00
+          </div>
+        </td>
+      </tr>
+      <tr class="linha">
+        <td colspan="2">
+          <input
+            type="radio"
+            name="formaPgto"
+            id="pix"
+            aria-checked="true"
+            value="pix"
+            [(ngModel)]="pgto.formaPgto"
+            formControlName="formaPgto"
+          />&nbsp;<label for="pix">PIX</label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <input
+            type="radio"
+            name="formaPgto"
+            id="dinheiro"
+            value="dinheiro"
+            [(ngModel)]="pgto.formaPgto"
+            formControlName="formaPgto"
+          />&nbsp;<label for="dinheiro"> Dinheiro</label>
+        </td>
+      </tr>
+      <tr *ngIf="verifDup">
+        <td style="color:red" colspan="2">
+          Pagamento Duplicado
+        </td>
+      </tr>  
+    </table>
+    <ion-button expand="block" fill="outline" type="submit"
+      >INCLUIR PGTO</ion-button
+    >
+  </form>
+</div>

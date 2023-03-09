@@ -1,7 +1,8 @@
 {
   "name": "mensalidades1",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
