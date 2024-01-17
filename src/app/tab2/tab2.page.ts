@@ -30,6 +30,7 @@ export class Tab2Page implements OnInit {
   private setMensalistas(): void {
     this.mensalistaService.mensalistaSubject.subscribe(res => {
       this.mensalistas = res;
+      this.mensalistas = this.mensalistas.filter(m => m.ativo);
     })
   }
 

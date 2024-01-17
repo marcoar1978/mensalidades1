@@ -23,7 +23,7 @@
               <ion-col style="text-align: center">{{
                 pgto.dataPgto | date : "dd/MM/yyyy"
               }}</ion-col>
-              <ion-col style="text-align: center">{{ pgto.formaPgto }}</ion-col>
+              <ion-col style="text-align: center">{{ pgto.mes }}/{{ pgto.ano }}</ion-col>
               <ion-col class="button-delete" (click)="presentAlert(pgto)" ><ion-icon name="trash-outline" style="color:red"></ion-icon></ion-col>
             </ion-row>
           </ion-grid>

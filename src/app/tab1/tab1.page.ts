@@ -17,7 +17,7 @@ export class Tab1Page implements OnInit {
   ngOnInit(): void {
     this.mensalistaService.mensalistaSubject.subscribe(res => {
       this.mensalistas = res;
-      
+      this.mensalistas = this.mensalistas.filter(m => m.ativo);
     })
   }
 

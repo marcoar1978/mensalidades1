@@ -41,7 +41,7 @@
             style="color: red; margin-top:3px"
           >
             O valor máximo é de R$
-            {{ this.valorConfig.valorMensalidade - this.valorPago }},00
+            {{ (this.valorConfig.valorMensalidade * 2) - this.valorPago }},00
           </div>
           <div
             *ngIf="form.get('valor')?.errors?.['min'] && submit"

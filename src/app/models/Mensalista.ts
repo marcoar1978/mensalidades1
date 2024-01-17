@@ -7,6 +7,7 @@ export interface Mensalista {
     nomeSimp: string;
     whatsapp: string;
     fardado: boolean;
+    ativo: boolean;
     pgtos: Pgto[];
     mensalidades: Mensalidade[];
 }

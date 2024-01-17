@@ -34,7 +34,7 @@ export class MesesPage implements OnInit {
 
     this.valoresConfigService.valoresSubject.subscribe(res => {
       this.valoresConfigs = res;
-      this.valorConfig = this.valoresConfigs.find(v => v.ano == this.ano.toString()) as ValoresConfig;
+      this.valorConfig = this.valoresConfigs.find(v => v.ano == "2023") as ValoresConfig;
 
     })
   }
@@ -51,7 +51,7 @@ export class MesesPage implements OnInit {
   }
 
   public showFormPgto(mes: string, valorPago: number): void {
-    if (valorPago < this.valorConfig.valorMensalidade) {
+    if (valorPago < 200) {
       $(`.form-mes:not(#form-mes-${mes})`).slideUp();
       $(`#form-mes-${mes}`).slideToggle();
     }
